@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="world_file"  default="worlds/empty.world"/>
+    <arg name="gui" default="true"/>
+    <arg name="paused" default="false"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="world_name" value="$(arg world_file)"/>
+    </include>
+    
+    <include file="$(find kuka_kr150_gazebo)/launch/load_kr150_gazebo.launch"/>
+
+    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
+
+    <include file="$(find kuka_kr150_gazebo)/launch/controller_utils.launch"/>
+
+    <rosparam file="$(find kuka_kr150_gazebo)/config/joint_trajectory_controller.yaml" command="load"/>
+    <node name="joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner" args="position_trajectory_controller" />
+</launch>
