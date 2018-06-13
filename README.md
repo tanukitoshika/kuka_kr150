@@ -7,4 +7,5 @@ To plan and execute:
 
 ![rosgraph](rosgraph_2018-06-12.png)
 
-![video](test.gif)
+![video](rviz_2018-06-12.gif)
+![video](gazebo_2018-06-12.gif)
