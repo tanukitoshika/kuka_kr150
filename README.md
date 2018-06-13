@@ -6,3 +6,5 @@ To plan and execute:
 `roslaunch kuka_150_moveit_config moveit_planning_execution.launch`
 
 ![rosgraph](rosgraph_2018-06-12.png)
+
+![video](test.gif)
