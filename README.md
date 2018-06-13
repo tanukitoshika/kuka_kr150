@@ -1,5 +1,5 @@
 # kuka_kr150
-To startup Gazebo and spawn kuka kr150 3d model:  
+To startup Gazebo and spawn KUKA KR150 3d model:  
 `roslaunch kuka_kr150_gazebo test_kr150_gazebo.launch`
 
 To plan and execute:  
